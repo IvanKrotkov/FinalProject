@@ -1,26 +1,35 @@
+package Core;
+
 import java.util.Date;
 
-public class Cat extends Pets{
+public class Cat extends Pets {
     protected Cat(String name, Date dateOfBirhday) {
         super(name, dateOfBirhday);
+    }
+    public static Cat getCat(String name, Date dob){
+        return new Cat(name,dob);
     }
     public void walk(){
         System.out.println("Как грациозно она ходит!");
     }
     @Override
-    void makeASound() {
+    public void makeASound() {
         System.out.println("мяу");
     }
 
+    public Cat() {
+        super();
+    }
+
     @Override
-    protected String getCommand() {
+    public String getCommand() {
         StringBuilder sb = new StringBuilder(super.getCommand());
         sb.append("\nwalk()");
         return sb.toString();
     }
 
     @Override
-    void caress() {
+    public void caress() {
         System.out.println("Мурррр");
     }
 }

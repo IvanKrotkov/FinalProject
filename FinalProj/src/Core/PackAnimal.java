@@ -1,13 +1,20 @@
+package Core;
+
 import java.util.Date;
 
-abstract class PackAnimal extends ParentClass{
+abstract class PackAnimal extends ParentClass {
     public PackAnimal(String name, Date dateOfBirhday) {
         super(name, dateOfBirhday);
     }
+
+    public PackAnimal() {
+        super();
+    }
+
     abstract void transport();
 
     @Override
-    protected String getCommand() {
+    public String getCommand() {
         StringBuilder sb = new StringBuilder(super.getCommand());
         sb.append("\ntransport()");
         return sb.toString();

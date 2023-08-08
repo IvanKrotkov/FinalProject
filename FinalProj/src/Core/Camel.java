@@ -1,17 +1,24 @@
+package Core;
+
 import java.util.Date;
 
-public class Camel extends PackAnimal{
+public class Camel extends PackAnimal {
     public Camel(String name, Date dateOfBirhday) {
         super(name, dateOfBirhday);
     }
-
+    public Camel(){
+        super();
+    }
+    public static Camel getCamel(String name, Date dob){
+        return new Camel(name,dob);
+    }
     @Override
-    void transport() {
+    public void transport() {
         System.out.println("Верблюд работает");
     }
 
     @Override
-    void makeASound() {
+    public void makeASound() {
         System.out.println("Верблюд чем то недоволен..");
     }
 
@@ -22,7 +29,6 @@ public class Camel extends PackAnimal{
         sb.append("\ngo()");
         return sb.toString();
     }
-
 
     void spit(){
         System.out.println("Осторожно, он плюгнул!");

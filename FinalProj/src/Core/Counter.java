@@ -1,3 +1,5 @@
+package Core;
+
 public class Counter implements AutoCloseable{
     private int count = 0;
     private Status status;
